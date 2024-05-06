@@ -22,7 +22,7 @@ type StarType = {
 const Star = ({selected, onClick}: StarType) => {
     return (
         <span onClick={onClick}>
-            {selected ? <b>Star</b> : "Star"}
+            {selected ? <b>Star </b> : "Star "}
         </span>
     )
 }

@@ -1,0 +1,29 @@
+.onoff__container {
+    display: flex;
+    align-items: center;
+}
+
+.onoff__container + .onoff__container {
+    margin-top: 10px;
+}
+
+.onoff__square {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.onoff__indicator {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid black;
+    margin-left: 15px;
+}
+
+.--on {
+    background-color: green;
+}
+
+.--off {
+    background-color: red;
+}
