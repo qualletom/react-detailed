@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
 import './App.css';
-import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
-import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 import {Rating, RatingValueType} from "./components/Rating/Rating";
 import {Accordion} from "./components/Accordion/Accordion";
@@ -24,8 +22,8 @@ function App() {
             {/*<UncontrolledRating />*/}
             <Rating value={ratingValue} setValue={setRatingValue} />
             <hr/>
-            <UncontrolledOnOff />
-            <UncontrolledOnOff />
+            {/*<UncontrolledAccordion title={""} />*/}
+            {/*<UncontrolledAccordion title={""} />*/}
             <hr/>
             <OnOff isActive={on} setIsActive={setOn}/>
 
