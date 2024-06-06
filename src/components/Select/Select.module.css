@@ -1,0 +1,54 @@
+.container {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.valueContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 32px;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+
+    &:hover {
+        border-bottom-width: 2px;
+    }
+}
+
+.label {
+
+}
+
+.options {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 5px 5px -3px,
+    rgba(0, 0, 0, 0.14) 0 8px 10px 1px,
+    rgba(0, 0, 0, 0.12) 0 3px 14px 2px;
+
+    ul {
+        padding: 8px 0;
+        margin: 0;
+        list-style-type: none;
+    }
+
+    .option {
+        cursor: pointer;
+        padding: 6px 16px;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.04);
+        }
+
+        &.selected {
+            background-color: rgba(25, 118, 210, 0.08);
+
+            &:hover {
+                background-color: rgba(25, 118, 210, 0.12);
+            }
+        }
+    }
+}
