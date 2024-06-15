@@ -1,28 +1,30 @@
-import {KeyboardEvent, useEffect, useState} from "react";
+import {KeyboardEvent, memo, useEffect, useState} from "react";
 import s from './Select.module.css';
 
 export type ItemType = {
   title: string;
-  value: number;
+  value: number | string;
+  [key: string]: any;
 }
 
 type SelectType = {
-  value?: number;
+  value?: number | string;
   onChange: (value: any) => void;
   items: ItemType[];
   labelValue: string;
 }
 
-export const Select = ({value, labelValue, onChange, items}: SelectType) => {
+export const Select = memo(({value, labelValue, onChange, items}: SelectType) => {
+  console.log("RENDER SELECT " + labelValue);
   const [expanded, setExpanded] = useState(false);
   const [hoveredOptionValue, setHoveredOptionValue] = useState(value);
   const activeOption = items.find((item) => item.value === value);
 
-  const changeValue = (value: number) => {
+  const changeValue = (value: number | string) => {
     onChange(value);
   }
 
-  const handleItemClick = (value: number) => () => {
+  const handleItemClick = (value: number | string) => () => {
     changeValue(value);
     toggleOptions();
   }
@@ -77,12 +79,7 @@ export const Select = ({value, labelValue, onChange, items}: SelectType) => {
         {activeOption?.title}
       </div>
       {expanded &&
-          <div
-              onFocus={() => console.log("onFocus")}
-              tabIndex={0}
-              onBlur={() => setExpanded(false)}
-              className={`${s.options}`}
-          >
+          <div className={`${s.options}`}>
               <ul>
                 {items.map((item, index) =>
                   <li
@@ -97,4 +94,4 @@ export const Select = ({value, labelValue, onChange, items}: SelectType) => {
       }
     </div>
   );
-};
+});
